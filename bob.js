@@ -19,7 +19,7 @@ Bob.prototype.hey = function(input) {
 
   function statingSomething(input) {
     var response = whatever;
-    var match = /^[A-Z]{1}[a-z\s\,\.\-]+\.$/.test(input);
+    var match = /^[A-Z]{1}[a-zA-Z\s\,\.\-]*[a-z\s\,\.\-]+[a-zA-Z\s\,\.\-\']*\.$/.test(input);
 
     return !match ? match : response;
   }
