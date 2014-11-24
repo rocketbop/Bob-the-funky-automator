@@ -1,7 +1,3 @@
-//
-// 
-//
-
 var Bob = function() {};
 
 Bob.prototype.hey = function(input) {
@@ -18,43 +14,31 @@ Bob.prototype.hey = function(input) {
 
   // Individual functions for each type of input
   function statingSomething(input) {
-    var match = false;
+    var response = whatever;
+    var match = /^[A-Z]{1}[a-z\s\,\.\-]+\.$/.test(input);
 
-    match = /^[A-Z]{1}[a-z\s\,\.\-]+\.$/.test(input);
-    if (!match) {
-      return match;
-    } else {
-      return whatever;
-    }
+    return !match ? match : response;
   }
 
   function shouting(input) {
-    var match = false;
+    var response = whoa;
+    var match = /^[A-Z]{1}[A-Z\s\,\.\-]+\!$/.test(input);
 
-    match = /^[A-Z]{1}[A-Z\s\,\.\-]+\!$/.test(input);
-    if (!match) {
-      return match;
-    } else {
-      return whoa;
-    }
+    return !match ? match : response;
   }
 
     function askingAQuestion(input) {
-    var match = false;
+    var response = sure;
+    var match = /^[A-Z]{1}[a-zA-Z\s\,\.\-]*[a-z\s\,\.\-]+\?$/.test(input);
 
-    match = /^[A-Z]{1}[a-zA-Z\s\,\.\-]*[a-z\s\,\.\-]+\?$/.test(input);
-    if (!match) {
-      return match;
-    } else {
-      return sure;
-    }
+    return !match ? match : response;
   }
 
-  testArray = [statingSomething, shouting, askingAQuestion];
+  functionArray = [statingSomething, shouting, askingAQuestion];
 
   // run each program with the input until one succeeds, before outputting the relevant response
-  for (var i = 0; i < testArray.length; i++) {
-    success = testArray[i](input)
+  for (var i = 0; i < functionArray.length; i++) {
+    success = functionArray[i](input)
     output = success;
     if (success != false) {
       break
