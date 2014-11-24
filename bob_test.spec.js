@@ -8,17 +8,17 @@ describe("Bob", function() {
     expect(result).toEqual('Whatever.');
   });
 
-  it("shouting", function() {
+  xit("shouting", function() {
     var result = bob.hey('WATCH OUT!');
     expect(result).toEqual('Whoa, chill out!');
   });
 
-  it("asking a question", function() {
+  xit("asking a question", function() {
     var result = bob.hey('Does this cryogenic chamber make me look fat?');
     expect(result).toEqual('Sure.');
   });
 
-  it("talking forcefully", function() {
+  xit("talking forcefully", function() {
     var result = bob.hey("Let's go make out behind the gym!");
     expect(result).toEqual('Whatever.');
   });
