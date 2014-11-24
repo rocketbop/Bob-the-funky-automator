@@ -16,7 +16,7 @@ Bob.prototype.hey = function(input) {
   var testArray = [];
 
 
-
+  // Individual functions for each type of input
   function statingSomething(input) {
     var match = false;
 
@@ -39,8 +39,20 @@ Bob.prototype.hey = function(input) {
     }
   }
 
-  testArray = [statingSomething, shouting];
+    function askingAQuestion(input) {
+    var match = false;
 
+    match = /^[A-Z]{1}[a-zA-Z\s\,\.\-]*[a-z\s\,\.\-]+\?$/.test(input);
+    if (!match) {
+      return match;
+    } else {
+      return sure;
+    }
+  }
+
+  testArray = [statingSomething, shouting, askingAQuestion];
+
+  // run each program with the input until one succeeds, before outputting the relevant response
   for (var i = 0; i < testArray.length; i++) {
     success = testArray[i](input)
     output = success;
@@ -48,8 +60,7 @@ Bob.prototype.hey = function(input) {
       break
     }
   };
-  console.log(output);
-  
+
   return output;
 //
 };
