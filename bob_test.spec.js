@@ -8,7 +8,7 @@ describe("Bob", function() {
     expect(result).toEqual('Whatever.');
   });
 
-  xit("shouting", function() {
+  it("shouting", function() {
     var result = bob.hey('WATCH OUT!');
     expect(result).toEqual('Whoa, chill out!');
   });

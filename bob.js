@@ -19,7 +19,7 @@ Bob.prototype.hey = function(input) {
 
   function statingSomething(input) {
     var match = false;
-    // if this matches set true
+
     match = /^[A-Z]{1}[a-z\s\,\.\-]+\.$/.test(input);
     if (!match) {
       return match;
@@ -29,7 +29,14 @@ Bob.prototype.hey = function(input) {
   }
 
   function shouting(input) {
-    // Do something
+    var match = false;
+
+    match = /^[A-Z]{1}[A-Z\s\,\.\-]+\!$/.test(input);
+    if (!match) {
+      return match;
+    } else {
+      return whoa;
+    }
   }
 
   testArray = [statingSomething, shouting];
