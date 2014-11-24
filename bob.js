@@ -2,7 +2,7 @@ var Bob = function() {};
 
 Bob.prototype.hey = function(input) {
 //
-// YOUR CODE GOES HERE
+// INIT VARIABLES
   var output = '';
   var whatever = 'Whatever.';
   var whoa = 'Whoa, chill out!';
@@ -11,8 +11,12 @@ Bob.prototype.hey = function(input) {
   var success = true;
   var testArray = [];
 
+// APP
+//
+  // Each function is the same, but for the response, and the regex
+  // If the regex matches the input, the function's response is returned, otherwise false is returned
+  // and the for loop moves on to the next function in the functions array
 
-  // Individual functions for each type of input
   function statingSomething(input) {
     var response = whatever;
     var match = /^[A-Z]{1}[a-z\s\,\.\-]+\.$/.test(input);
@@ -27,16 +31,24 @@ Bob.prototype.hey = function(input) {
     return !match ? match : response;
   }
 
-    function askingAQuestion(input) {
+  function askingAQuestion(input) {
     var response = sure;
-    var match = /^[A-Z]{1}[a-zA-Z\s\,\.\-]*[a-z\s\,\.\-]+\?$/.test(input);
+    var match = /^[A-Z]{1}[a-zA-Z\s\,\.\-]*[a-z\s\,\.\-]+[a-zA-Z\s\,\.\-]*\?$/.test(input);
 
     return !match ? match : response;
   }
 
-  functionArray = [statingSomething, shouting, askingAQuestion];
+  function talkingForcefully(input) {
+    var response = whatever;
+    var match = /^[A-Z]{1}[a-zA-Z\s\,\.\-]*[a-z\s\,\.\-\']+[a-zA-Z\s\,\.\-]*\!$/.test(input);
 
-  // run each program with the input until one succeeds, before outputting the relevant response
+    return !match ? match : response;
+  }
+
+  functionArray = [statingSomething, shouting, askingAQuestion, talkingForcefully];
+
+  // RUN EACH PROGRAM WITH THE INPUT UNTIL ONE SUCCEEDS, BEFORE OUTPUTTING THE RELEVANT RESPONSE
+
   for (var i = 0; i < functionArray.length; i++) {
     success = functionArray[i](input)
     output = success;
